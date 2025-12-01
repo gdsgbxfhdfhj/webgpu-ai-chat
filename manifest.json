@@ -2,7 +2,7 @@
   "name": "AI Chat",
   "short_name": "AI Chat",
   "description": "On-device AI chat powered by WebGPU",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#1c1c1e",
   "theme_color": "#1c1c1e",
