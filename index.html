@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="theme-color" content="#1c1c1e">
-
-    <!-- FIXED CSP for GitHub Pages -->
+    
+    <!-- FIXED CSP -->
     <meta http-equiv="Content-Security-Policy"
           content="
             default-src 'self';
@@ -14,22 +14,17 @@
             connect-src 'self' https://huggingface.co https://cdn.jsdelivr.net;
             worker-src 'self' blob:;
             img-src 'self' data: blob:;
-            font-src 'self' data:;
           ">
 
     <title>AI Chat</title>
 
     <link rel="manifest" href="manifest.json">
-
-    <link rel="icon"
-          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
-
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
     <link rel="stylesheet" href="styles.css">
 
-    <!-- FIXED: Local version of telegram-web-app.js (NO CSP VIOLATION) -->
-    <script src="./lib/telegram-web-app.js"></script>
+    <!-- Telegram API locally -->
+    <script src="/lib/telegram-web-app.js"></script>
 </head>
-
 <body>
     <div id="app">
         <div id="loading-screen" class="loading-screen">
@@ -37,29 +32,23 @@
                 <div class="loading-logo">🤖</div>
                 <div class="loading-spinner"></div>
                 <p id="loading-text">Initializing AI...</p>
-
                 <div class="loading-progress">
                     <div id="loading-bar" class="loading-bar"></div>
                 </div>
-
                 <p id="loading-status" class="loading-status"></p>
             </div>
         </div>
 
         <div id="main-view" class="main-view hidden">
             <nav class="bottom-nav">
-
                 <button class="nav-btn active" data-page="chat">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                     </svg>
                     <span>Chat</span>
                 </button>
-
                 <button class="nav-btn" data-page="personas">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                         <circle cx="9" cy="7" r="4"></circle>
                         <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -67,26 +56,21 @@
                     </svg>
                     <span>Personas</span>
                 </button>
-
                 <button class="nav-btn" data-page="settings">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="3"></circle>
                         <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3"></path>
                     </svg>
                     <span>Settings</span>
                 </button>
-
                 <button class="nav-btn" data-page="about">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="16" x2="12" y2="12"></line>
                         <line x1="12" y1="8" x2="12.01" y2="8"></line>
                     </svg>
                     <span>About</span>
                 </button>
-
             </nav>
 
             <div id="content-area" class="content-area"></div>
@@ -95,7 +79,6 @@
         <div id="modal-root"></div>
     </div>
 
-    <!-- FIXED: JS path is root-level, NOT inside src -->
     <script type="module" src="app.js"></script>
 </body>
 </html>
