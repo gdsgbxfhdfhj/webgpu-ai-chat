@@ -1,6 +1,6 @@
 import { chatEngine } from '../core/chatEngine.js';
 import { personaEngine } from '../core/personaEngine.js';
-import { quotaManager } from '../core/quotaManager.js';
+import quotaManager from '../core/quotaManager.js';
 import { eventBus } from '../utils/events.js';
 
 class ChatUI {
